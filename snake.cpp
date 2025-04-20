@@ -15,7 +15,7 @@ void Snake::draw()
 	// 绘制每一节蛇
 	for (int i = 0; i < nodes.size(); i++)
 	{
-		nodes[i].draw();
+		nodes[i].draw(); // nodes容器对象类型是基类，这里是静态编联，调用基类虚函数
 	}
 }
 
@@ -49,7 +49,7 @@ void Snake::bodymove()
 	}
 }
 
-bool Snake::collision(const Sprite &other)
+bool Snake::collision(const Sprite &other) // 撞到的有可能是食物，有可能是自己的身体，所以直接传基类参数
 {
 	// 只有蛇头和食物碰撞才算碰撞
 	// nodes是sprite类型 可以调用成员函数collision 不在一个类里不算重载

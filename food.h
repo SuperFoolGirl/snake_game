@@ -6,7 +6,7 @@ class Food : public Sprite
 public:
 	Food();
 
-	void draw();
+	virtual void draw();
 
 	void changePos();
 };

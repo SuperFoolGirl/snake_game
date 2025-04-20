@@ -8,8 +8,8 @@ using namespace std;
 class Sprite
 {
 public:
-	Sprite() : Sprite(0, 0) {};								// 非要写一个默认构造？效果是强转调用有参构造
-	Sprite(int x, int y) : m_x(x), m_y(y), m_color(RED) {}; // 构造函数就不在cpp里实现了
+	Sprite() : Sprite(0, 0) {};								// 委托构造，构造函数全部交给下面的构造函数
+	Sprite(int x, int y) : m_x(x), m_y(y), m_color(RED) {};
 
 	// 用于绘制精灵
 	virtual void draw();
@@ -20,7 +20,7 @@ public:
 	bool collision(const Sprite &other);
 
 	// 注意下属性里放的都是游戏固有背景的那些东西 坐标、颜色
-protected: // 让子类能够使用
+protected: // 只有派生类才可以访问
 	int m_x;
 	int m_y;
 	COLORREF m_color;

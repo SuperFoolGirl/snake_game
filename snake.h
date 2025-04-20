@@ -8,13 +8,13 @@ public:
 	Snake() : Snake(0, 0) {}
 	Snake(int x, int y);
 
-	void draw(); // 重写父类虚函数
+	virtual void draw(); // override基类虚函数
 
 	void bodymove();
 
 	bool collision(const Sprite &other); // 这里与父类碰撞成员函数无关，只有对象才能调用成员函数
 
-	void incrment();
+	void incrment(); // 增加蛇的长度
 
 private:
 	// 蛇的节数 且不止一节 借助容器

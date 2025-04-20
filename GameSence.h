@@ -12,7 +12,7 @@ public:
 
 	void onMsg(const ExMessage &msg); // 响应键盘鼠标消息 代替_getch()
 
-	// 判断蛇能否迟到食物
+	// 判断蛇能否吃到食物
 	void snakeEatFood();
 
 private:
